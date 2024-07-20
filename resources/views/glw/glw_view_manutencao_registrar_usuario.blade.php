@@ -1,14 +1,14 @@
 @extends('est.est_index')
 
 @section('linkCss')
-<link rel="stylesheet" href="{{asset('/css/glw/glw_style_manutencao_registrar.css')}}">
+<link rel="stylesheet" href="/css/glw/registrar.css">
 @endsection
 
 @section('content')
 <div class="content">
     <main>
         <div class="formulario_registrar">
-            <form action="/logar" method="POST">
+            <form action="/rot=1/aca=102" method="POST">
                 @csrf
                 <div class="formulario_registrar_header">
                     <span>
@@ -19,26 +19,26 @@
                     <table>
                         <tr>
                             <td>
-                                <label for="campo_nome_usuario">Nome de usuário</label>
+                                <label for="campo_nome_usuario" class='titulo_campo'>Nome de usuário: </label>
                             </td>
                             <td>
-                                <input type="text" name="campo_nome_usuario">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="campo_senha">Senha</label>
-                            </td>
-                            <td>
-                                <input type="password" name="campo_senha">
+                                <input class="campo" type="text" name="campo_nome_usuario">
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label for="campo_email">Email</label>
+                                <label for="campo_senha" class='titulo_campo'>Senha: </label>
                             </td>
                             <td>
-                                <input type="mail" name="campo_email">
+                                <input class="campo" type="password" name="campo_senha">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="campo_email" class='titulo_campo'>Email: </label>
+                            </td>
+                            <td>
+                                <input class="campo" type="mail" name="campo_email">
                             </td>
                         </tr>
                     </table>
@@ -47,10 +47,10 @@
                     <table>
                         <tr>
                             <td>
-                                <input type="submit" value="Registrar">
+                                <input class="botao_formulario_registrar botao_registrar" type="submit" value="Registrar">
                             </td>
                             <td>
-                                <input type="reset" value="Limpar">
+                                <input class="botao_formulario_registrar" type="reset" value="Limpar">
                             </td>
                         </tr>
                     </table>
@@ -60,5 +60,3 @@
     </main>
 </div>
 @endsection
-
-@yield('footer')

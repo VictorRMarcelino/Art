@@ -1,0 +1,58 @@
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.formulario_registrar{
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 280px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario_registrar_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.formulario_registrar_campos{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+.titulo_campo{
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;
+}
+
+.campo{
+    border-radius: 7px;
+}
+
+.formulario_registrar_footer{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 5%;
+    border-top: 1px solid black;
+    height: 20%;
+}
+
+.botao_formulario_registrar{
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.botao_registrar{
+    background-color: blue;
+    color: white;
+}
