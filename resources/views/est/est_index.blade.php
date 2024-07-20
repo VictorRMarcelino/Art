@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="/css/est/index.css">
         <link rel="stylesheet" href="/css/est/header.css">
         <link rel="stylesheet" href="/css/est/footer.css">
+        <script src='/js/est/mensagem.js'></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     

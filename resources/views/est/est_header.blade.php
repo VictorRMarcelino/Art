@@ -4,7 +4,7 @@
             <table>
                 <tr>
                     <td>
-                        <span>Publicações</span>
+                        <span><a href='/rot=1/aca=1'>Publicações</a></span>
                     <td>
                 </tr>
             </table>
@@ -13,10 +13,10 @@
             <table>
                 <tr>
                     <td>
-                        <span>Registrar</span>
+                        <span><a href='/rot=1/aca=1'>Registrar</a></span>
                     </td>
                     <td>
-                        <span>Logar</span>
+                        <span><a href='/rot=1/aca=2'>Logar</a></span>
                     </td>
                 </tr>
             </table> 
