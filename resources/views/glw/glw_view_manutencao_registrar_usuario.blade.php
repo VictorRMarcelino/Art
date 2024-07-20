@@ -2,6 +2,7 @@
 
 @section('linkCss')
 <link rel="stylesheet" href="/css/glw/registrar.css">
+<script src='/js/est/botao_limpar.js'></script>
 @endsection
 
 @section('content')
@@ -50,7 +51,7 @@
                                 <input class="botao_formulario_registrar botao_registrar" type="submit" value="Registrar">
                             </td>
                             <td>
-                                <input class="botao_formulario_registrar" type="reset" value="Limpar">
+                                @include('est.est_botao_limpar')
                             </td>
                         </tr>
                     </table>
