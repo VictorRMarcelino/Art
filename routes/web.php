@@ -1,10 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\est\ControllerConsulta;
+use App\Http\Controllers\est\Controller;
 
-Route::get('/rot={iRot}/aca={iAcao}', [ControllerConsulta::class, 'processaDados']);
-
-Route::post('/rot={rot}/aca={acao}', function() {
-
-});
+Route::get('/art', [Controller::class, 'processaDados']);
+Route::post('/art', [Controller::class, 'processaDados']);

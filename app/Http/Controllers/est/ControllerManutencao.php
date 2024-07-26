@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\est;
 
 use Illuminate\Http\Request;
-use App\Models\Enum\est\EnumAcao;
 
 abstract class ControllerManutencao{
     
@@ -119,4 +118,5 @@ abstract class ControllerManutencao{
      }
 
      protected function afterExecutaExclusao(){}
+
 }
