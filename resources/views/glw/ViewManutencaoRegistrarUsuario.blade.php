@@ -1,4 +1,4 @@
-@extends('est.est_index')
+@extends('est.index')
 
 @section('linkCss')
 <link rel="stylesheet" href="/css/glw/registrar.css">
