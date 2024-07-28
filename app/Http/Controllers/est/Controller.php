@@ -7,7 +7,7 @@ use App\Models\Enum\est\EnumAcao;
 use App\Models\est\ModelFormulario;
 use App\Models\est\ModelAcao;
 
-abstract class Controller{
+class Controller{
     
     /**
      * @var Request
@@ -62,36 +62,23 @@ abstract class Controller{
      * Get the value of codigoRotina
      */ 
     public function getCodigoRotina(){
-        return $this->codigoRotina;
-    }
-
-    /**
-     * Set the value of codigoRotina
-     */ 
-    public function setCodigoRotina($codigoRotina){
-        $this->codigoRotina = $codigoRotina;
+        return $this->getFormulario()->getId();
     }
 
     /**
      * Get the value of codigoAcao
      */ 
     public function getCodigoAcao(){
-        return $this->codigoAcao;
+        return $this->getFormulario()->getAcao();
     }
 
-    /**
-     * Set the value of codigoAcao
-     */ 
-    public function setCodigoAcao($codigoAcao){
-        $this->codigoAcao = $codigoAcao;
-    }
-
-    public function processaFormulario(){
-        $this->setCodigoRotina($oRequest->input('rot'));
-        $this->setCodigoAcao($oRequest->input('aca'));
-        
-        if ($this->loadFormulario()) {
-            $this->processaDados();
+    public function processaFormulario(Request $oRequest){
+        if ($this->loadFormulario($oRequest)) {
+            $sController = 'App\\Http\\Controllers\\' . $this->getFormulario()->getModulo()->getSigla() . '\\' . $this->getFormulario()->getController();
+            $oController = new $sController();
+            $oController->setRequisicao($oRequest);
+            $oController->setFormulario($this->getFormulario());
+            return $oController->processaDados();
         }
         
     }
@@ -99,16 +86,18 @@ abstract class Controller{
     /**
      * Inicia o processamento da requisição
      */
-    abstract public function processaDados(Request $oRequest);
+    public function processaDados(){}
 
     /**
      * Carrega o formulário com base na rotina e ação recebidas por parâmetro
      */
-    private function loadFormulario(){
-        $oAcao = ModelAcao::where('id', $this->getCodigoAcao())->firstOrFail();
-
-        if($oAcao){
-            $oFormulario = ModelFormulario::where(['id', ]);
+    private function loadFormulario($oRequest){
+        $oFormulario = ModelFormulario::findOrFail($oRequest->input('rot'));
+        if($oFormulario){
+            $this->setFormulario($oFormulario);
+            return true;
+        }else{
+            //todo descobrir como exibir a mensagem de erro
         }
     }
 }

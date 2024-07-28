@@ -10,11 +10,7 @@ class ModelModulo extends Model{
 
     //Propriedades Padrões
     protected $table = 'tbmodulo';
-    protected $primaryKey = 'modid'; 
-
-    private $id;
-    private $titulo;
-    private $sigla;
+    protected $primaryKey = 'id'; 
 
     /**
      * Get the value of id
@@ -49,12 +45,5 @@ class ModelModulo extends Model{
      */ 
     public function getSigla(){
         return $this->sigla;
-    }
-
-    /**
-     * Set the value of sigla
-     */ 
-    public function setSigla($sigla){
-        $this->sigla = $sigla;
     }
 }
