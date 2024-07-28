@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 abstract class EnumAcao{
     
-    const ACAO_INCLUIR = 102,
-          ACAO_ALTERAR = 103,
-          ACAO_EXCLUIR = 104;
+    const ACAO_CONSULTAR = 1,
+          ACAO_INCLUIR   = 2,
+          ACAO_ALTERAR   = 3,
+          ACAO_EXCLUIR   = 4;
 }

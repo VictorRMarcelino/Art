@@ -5,23 +5,8 @@ namespace App\Http\Controllers\est;
 use Illuminate\Http\Request;
 
 abstract class ControllerManutencao{
-    
-    private $Request;
+
     private $Model;
-
-    /**
-     * Get the value of Request
-     */ 
-    public function getRequest(){
-        return $this->Request;
-    }
-
-    /**
-     * Set the value of Request
-     */ 
-    public function setRequest($Request){
-        $this->Request = $Request;
-    }
 
     /**
      * Get the value of Model
@@ -56,7 +41,7 @@ abstract class ControllerManutencao{
      * @param Request $oRequest
      * 
      */
-    public function processaDados(Request $oRequest){
+    public function processaDados(){
         $this->setRequest($oRequest);
 
         $iAcao = 1;
@@ -84,7 +69,11 @@ abstract class ControllerManutencao{
       * Processa a inclusão do registro no DB
       */
      protected function processaDadosInclusao(){
-        $this->getModel()->insert();
+        $this->beforeExecutaInclusao();
+        
+        if ($this->getModel()->insert()) {
+            $this->afterExecutaInclusao();
+        }
      }
 
      protected function afterExecutaInclusao(){}
