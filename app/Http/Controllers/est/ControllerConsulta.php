@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\est;
 
 use Illuminate\Http\Request;
-use App\Http\Controller\est\Controller;
+use App\Http\Controllers\est\Controller;
 
 abstract class ControllerConsulta extends Controller{
 

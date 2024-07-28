@@ -17,8 +17,8 @@
         <title>Art</title>
     </head>
     <body>
-        @include('est.est_header')
+        @include('est.header')
         @yield('content')
-        @include('est.est_footer')
+        @include('est.footer')
     </body>
 </html>
